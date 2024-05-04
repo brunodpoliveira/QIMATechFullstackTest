@@ -1,0 +1,7 @@
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/config/SecurityConfiguration.java
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/controller/MainController.java
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/QimaTestApplication.java
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/repository/ProductRepository.java
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/service/ProductService.java
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/model/Product.java
+/home/bruno/MEGA/code/QIMATechFullstackTest/qima-test/src/main/java/com/QIMATest/app/controller/WelcomePageController.java

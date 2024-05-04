@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category Path</th>
+            <th>Available</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.categoryPath}"></td>
+            <td th:text="${product.available ? 'Yes' : 'No'}"></td>
+            <td>
+                <a th:href="@{/products/{id}(id=${product.id})}">View</a>
+                |
+                <a th:href="@{/products/{id}/edit(id=${product.id})}">Edit</a>
+                <form th:action="@{/products/{id}/delete(id=${product.id})}" method="post" style="display:inline;">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    <button type="submit" style="background: none; color: blue; border: none; padding: 0; cursor: pointer; text-decoration: underline;">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <h2>Add Product</h2>
+    <form th:action="@{/products}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required min="0.01" step="0.01"><br>
+        <label for="categoryPath">Category Path:</label>
+        <input type="text" id="categoryPath" name="categoryPath" required><br>
+        <label for="available">Available:</label>
+        <input type="checkbox" id="available" name="available"><br>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <input type="submit" value="Add Product">
+    </form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+com/QIMATest/app/service/ProductService.class
+com/QIMATest/app/model/Product.class
+com/QIMATest/config/SecurityConfiguration.class
+com/QIMATest/app/controller/WelcomePageController.class
+com/QIMATest/app/controller/MainController.class
+com/QIMATest/app/repository/ProductRepository.class
+com/QIMATest/app/QimaTestApplication.class

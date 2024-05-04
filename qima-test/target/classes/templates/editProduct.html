@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit Product</h1>
+        <form th:action="@{/products/{id}(id=${product.id})}"
+              method="post" th:object="${product}">
+        <input type="hidden" name="_method" value="put" />
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" th:field="*{description}" required>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" th:field="*{price}" required step="0.01">
+        </div>
+        <div>
+            <label for="categoryPath">Category Path:</label>
+            <input type="text" id="categoryPath" th:field="*{categoryPath}" required>
+        </div>
+        <div>
+            <label for="available">Available:</label>
+            <input type="checkbox" id="available" th:field="*{available}">
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+            <a href="/products">Cancel</a>
+        </div>
+    </form>
+</body>
+</html>
